@@ -2,6 +2,7 @@ import React from "react";
 import { View , Text , StyleSheet, KeyboardAvoidingView, TouchableOpacity, TextInput } from "react-native";
 import { AntDesign } from '@expo/vector-icons'
 import colors from '../Colors'
+import tempData from "../tempData";
 
 export default class AddListModal extends React.Component {
 
@@ -9,6 +10,19 @@ export default class AddListModal extends React.Component {
     state = {
         name: "",
         color: this.backgroundColors[0]
+    }
+
+    createTodo = () => {
+        const {name , color} = this.state
+
+        tempData.push({
+            name,
+            color,
+            todos: []
+        })
+
+        this.setState({name: ""})
+        this.props.closeModal()
     }
 
     renderColors() {
@@ -40,7 +54,10 @@ export default class AddListModal extends React.Component {
                     {this.renderColors()}
                 </View>
 
-                <TouchableOpacity style={[styles.create , {backgroundColor: this.state.color}]}>
+                <TouchableOpacity
+                    style={[styles.create , {backgroundColor: this.state.color}]}
+                    onPress={this.createTodo}
+                >
                     <Text style={{ color: colors.white, fontWeight: "600"}}>Create!</Text>
                 </TouchableOpacity>
 
