@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native
 import {AntDesign} from '@expo/vector-icons'
 import colors from './Colors'
 import tempData from './tempData'
+import TodoList from './components/TodoList'
 
 export default class App extends React.Component {
   render() {
@@ -30,11 +31,7 @@ export default class App extends React.Component {
             keyExtractor = {item => item.name}
             horizontal = {true}
             showsHorizontalScrollIndicator={false}
-            renderItem = {({ item }) => (
-              <View>
-                <Text>{item.name}</Text>
-              </View>
-            )}
+            renderItem = {({ item }) => <TodoList list={item} />}
           />
         </View>
       </View>
