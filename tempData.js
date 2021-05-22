@@ -2,6 +2,7 @@
 
 export default tempData = [
     {
+        id: 1,
         name: "Home Necessary",
         color: "#1e88e5",
         todos: [
@@ -48,6 +49,7 @@ export default tempData = [
         ]
     },
     {
+        id: 2,
         name: "Plan For Study",
         color: "#ba68c8",
         todos: [
@@ -62,6 +64,7 @@ export default tempData = [
         ]
     },
     {
+        id: 3,
         name: "Plan For Entertainment",
         color: "#4caf50",
         todos: [
