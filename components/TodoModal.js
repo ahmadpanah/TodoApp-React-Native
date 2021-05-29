@@ -62,7 +62,7 @@ export default class TodoModal extends React.Component {
                 <View style={[styles.section, {flex:3}]} >
                     <FlatList data={list.todos}
                     renderItem={({item , index}) => this.renderTodos(item , index)}
-                    keyExtractor={item => item.title}
+                    keyExtractor={(_ , index) => index.toString()}
                     contentContainerStyle={{paddingHorizontal: 32, paddingVertical: 64}}
                     showsVerticalScrollIndicator={false} />
                 </View>
